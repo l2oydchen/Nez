@@ -71,12 +71,12 @@ namespace Nez
 
 		public override void DebugRender(Batcher batcher)
 		{
-			batcher.DrawHollowRect(Bounds, Debug.Colors.ColliderBounds, Debug.Size.LineSizeMultiplier);
+			batcher.DrawHollowRect(Bounds, DebugRenderColorBounds, Debug.Size.LineSizeMultiplier);
 			batcher.DrawCircle(Shape.Position, ((Circle) Shape).Radius, DebugRenderColorEdge,
 				Debug.Size.LineSizeMultiplier);
-			batcher.DrawPixel(Entity.Transform.Position, Debug.Colors.ColliderPosition,
+			batcher.DrawPixel(Entity.Transform.Position, DebugRenderColorPosition,
 				4 * Debug.Size.LineSizeMultiplier);
-			batcher.DrawPixel(Shape.Position, Debug.Colors.ColliderCenter, 2 * Debug.Size.LineSizeMultiplier);
+			batcher.DrawPixel(Shape.Position, DebugRenderColorCenter, 2 * Debug.Size.LineSizeMultiplier);
 		}
 
 		public override string ToString()

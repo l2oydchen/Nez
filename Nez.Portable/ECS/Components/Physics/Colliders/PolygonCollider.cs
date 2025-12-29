@@ -40,12 +40,12 @@ namespace Nez
 		public override void DebugRender(Batcher batcher)
 		{
 			var poly = Shape as Polygon;
-			batcher.DrawHollowRect(Bounds, Debug.Colors.ColliderBounds, Debug.Size.LineSizeMultiplier);
+			batcher.DrawHollowRect(Bounds, DebugRenderColorBounds, Debug.Size.LineSizeMultiplier);
 			batcher.DrawPolygon(Shape.Position, poly.Points, DebugRenderColorEdge, true,
 				Debug.Size.LineSizeMultiplier);
-			batcher.DrawPixel(Entity.Transform.Position, Debug.Colors.ColliderPosition,
+			batcher.DrawPixel(Entity.Transform.Position, DebugRenderColorPosition,
 				4 * Debug.Size.LineSizeMultiplier);
-			batcher.DrawPixel(Shape.Position, Debug.Colors.ColliderCenter, 2 * Debug.Size.LineSizeMultiplier);
+			batcher.DrawPixel(Shape.Position, DebugRenderColorCenter, 2 * Debug.Size.LineSizeMultiplier);
 
 			// Normal debug code
 			//for( var i = 0; i < poly.points.Length; i++ )

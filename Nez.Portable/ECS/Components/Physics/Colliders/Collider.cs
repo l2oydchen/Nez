@@ -68,6 +68,21 @@ namespace Nez
 		/// </summary>
 		public Color DebugRenderColorEdge = Debug.Colors.ColliderEdge;
 
+		/// <summary>
+		/// color used when rendering the collider bounds in DebugRender
+		/// </summary>
+		public Color DebugRenderColorBounds = Debug.Colors.ColliderBounds;
+
+		/// <summary>
+		/// color used when rendering the collider position in DebugRender
+		/// </summary>
+		public Color DebugRenderColorPosition = Debug.Colors.ColliderPosition;
+
+		/// <summary>
+		/// color used when rendering the collider center in DebugRender
+		/// </summary>
+		public Color DebugRenderColorCenter = Debug.Colors.ColliderCenter;
+
 		public virtual RectangleF Bounds
 		{
 			get
