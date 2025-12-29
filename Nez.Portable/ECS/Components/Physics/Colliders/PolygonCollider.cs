@@ -41,7 +41,7 @@ namespace Nez
 		{
 			var poly = Shape as Polygon;
 			batcher.DrawHollowRect(Bounds, Debug.Colors.ColliderBounds, Debug.Size.LineSizeMultiplier);
-			batcher.DrawPolygon(Shape.Position, poly.Points, Debug.Colors.ColliderEdge, true,
+			batcher.DrawPolygon(Shape.Position, poly.Points, DebugRenderColor, true,
 				Debug.Size.LineSizeMultiplier);
 			batcher.DrawPixel(Entity.Transform.Position, Debug.Colors.ColliderPosition,
 				4 * Debug.Size.LineSizeMultiplier);

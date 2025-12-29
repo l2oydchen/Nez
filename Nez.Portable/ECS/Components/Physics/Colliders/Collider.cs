@@ -63,6 +63,11 @@ namespace Nez
 		/// </summary>
 		public bool ShouldColliderScaleAndRotateWithTransform = true;
 
+		/// <summary>
+		/// color used when rendering the collider edge in DebugRender
+		/// </summary>
+		public Color DebugRenderColor = Debug.Colors.ColliderEdge;
+
 		public virtual RectangleF Bounds
 		{
 			get

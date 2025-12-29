@@ -72,7 +72,7 @@ namespace Nez
 		public override void DebugRender(Batcher batcher)
 		{
 			batcher.DrawHollowRect(Bounds, Debug.Colors.ColliderBounds, Debug.Size.LineSizeMultiplier);
-			batcher.DrawCircle(Shape.Position, ((Circle) Shape).Radius, Debug.Colors.ColliderEdge,
+			batcher.DrawCircle(Shape.Position, ((Circle) Shape).Radius, DebugRenderColor,
 				Debug.Size.LineSizeMultiplier);
 			batcher.DrawPixel(Entity.Transform.Position, Debug.Colors.ColliderPosition,
 				4 * Debug.Size.LineSizeMultiplier);
