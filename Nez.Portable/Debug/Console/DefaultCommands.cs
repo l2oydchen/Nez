@@ -250,6 +250,13 @@ namespace Nez.Console
 				Core.DebugRenderEnabled ? "enabled" : "disabled"));
 		}
 
+		[Command("debug-render-filter", "Sets debug render filter. -1 = all, 0 = none, or bitmask of DebugRenderFilterType.")]
+		static void DebugRenderFilter(int filter = -1)
+		{
+			Core.DebugRenderFilter = filter;
+			Instance.Log("Debug render filter set to " + Core.DebugRenderFilter);
+		}
+
 
 		[Command("help", "Shows usage help for a given command")]
 		static void Help(string command)
