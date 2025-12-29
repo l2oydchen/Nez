@@ -305,10 +305,41 @@ namespace Nez
 
 		internal void DebugRender(Batcher batcher)
 		{
+			var filter = Core.DebugRenderFilter;
+			if (filter == -1)
+			{
+				for (var i = 0; i < _components.Length; i++)
+				{
+					if (_components.Buffer[i].Enabled)
+						_components.Buffer[i].DebugRender(batcher);
+				}
+				return;
+			}
+
+			var allowCollider = (filter & (int)DebugRenderFilterType.Collider) != 0;
+			var allowTile = (filter & (int)DebugRenderFilterType.Tile) != 0;
+			var allowSprite = (filter & (int)DebugRenderFilterType.Sprite) != 0;
+
 			for (var i = 0; i < _components.Length; i++)
 			{
-				if (_components.Buffer[i].Enabled)
-					_components.Buffer[i].DebugRender(batcher);
+				var component = _components.Buffer[i];
+				if (!component.Enabled)
+					continue;
+
+				if (allowCollider && component is Collider)
+				{
+					component.DebugRender(batcher);
+					continue;
+				}
+
+				if ((allowTile || allowCollider) && component is TiledMapRenderer)
+				{
+					component.DebugRender(batcher);
+					continue;
+				}
+
+				if (allowSprite && component is Nez.Sprites.SpriteRenderer)
+					component.DebugRender(batcher);
 			}
 		}
 	}

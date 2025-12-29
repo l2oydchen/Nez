@@ -18,6 +18,16 @@ using System.Diagnostics;
 
 namespace Nez
 {
+	/// <summary>
+	/// types used to filter debug rendering
+	/// </summary>
+	public enum DebugRenderFilterType
+	{
+		Collider = 1 << 0,
+		Tile = 1 << 1,
+		Sprite = 1 << 2
+	}
+
 	public class Core : Game
 	{
 		/// <summary>
@@ -39,6 +49,11 @@ namespace Nez
 		/// enables/disables debug rendering
 		/// </summary>
 		public static bool DebugRenderEnabled = false;
+
+		/// <summary>
+		/// bitmask used to filter debug rendering. -1 renders everything.
+		/// </summary>
+		public static int DebugRenderFilter = -1;
 
 		/// <summary>
 		/// global access to the graphicsDevice
