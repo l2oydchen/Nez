@@ -6,5 +6,7 @@ causing each csproj file to mess up the other.
 <Project>
   <PropertyGroup>
     <MSBuildProjectExtensionsPath>obj\$(MSBuildProjectName)\</MSBuildProjectExtensionsPath>
+    <!-- Keep sibling project intermediates out of the SDK default source glob. -->
+    <DefaultItemExcludes>$(DefaultItemExcludes);obj\**\*</DefaultItemExcludes>
   </PropertyGroup>
 </Project>
